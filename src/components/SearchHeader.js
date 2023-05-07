@@ -17,7 +17,6 @@ export default function SearchHeader() {
   const handleSearch = () => {
     navigate(`/products/${search}`);
   };
-  console.log(12123);
   return (
     <div>
       <input type="text" value={search} onChange={handleInputChange} />

@@ -12,16 +12,18 @@ import {
 } from "react-router-dom";
 import Shop from "./pages/Shop";
 import ShopDetail from "./pages/ShopDetail";
+import { RecoilRoot } from "recoil";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Shop /> },
-      { path: "/products", element: <Shop /> },
-      { path: "/products/:keyword", element: <Shop /> },
-      { path: "/products/detail/:productId", element: <ShopDetail /> },
+      { path: "/products", element: <Login /> },
+      { path: "/products/:keyword", element: <Login /> },
+      { path: "/products/detail/:productId", element: <Login /> },
+      { path: "/login", element: <Login /> },
     ],
   },
 ]);
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RecoilRoot>
+      <RouterProvider router={router} />
+    </RecoilRoot>
   </React.StrictMode>
 );
 
